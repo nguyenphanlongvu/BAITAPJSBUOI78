@@ -26,12 +26,24 @@ for( var i = 0 ; i < numberArr.length ; i++) {
         
     }
     if (numberArr[i] > 0 && numberArr[i] < min) {
-        min = numberArr[i]
+        min = numberArr[i];
     }// tìm số dương nho nhất trong mảng
 
     
 }
-
+//Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.
+function lastEven(numberArr) {
+    for (var i = numberArr.length - 1 ; i >=0 ; i--) {
+        if (numberArr[i]%2 == 0 ){
+        return numberArr[i];
+        
+    }else {
+        return -1
+    }
+    
+}
+    
+}
 
 
 
