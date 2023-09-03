@@ -44,17 +44,40 @@ function lastEven(numberArr) {
 }
     
 }
+var ketQua = lastEven(numberArr);
+//Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).
+function doiChoHaiGiaTri(numberArr, viTri1, viTri2){
+    if (viTri1 < 0 || viTri1 >= arr.length || viTri2 < 0 || viTri2 >= arr.length) {
+    // Kiểm tra xem vị trí nhập vào có hợp lệ không
+    console.log("Vị trí không hợp lệ.");
+    return;
+  }
+  var temp = numberArr[viTri1];
+  numberArr[viTri1] = numberArr[viTri2]
+  numberArr[viTri2] = temp ;
+
+}
+//sắp xếp giá trị tăng dần 
+function sortAcesding(numberArr) {
+    return numberArr.sort((a, b) => a-b)
+    
+}
+var sapXep = sortAcesding(numberArr);
 
 
 
-console.log("😃 - themSo - numberArr:", numberArr);
+
+
+
 
  var content = `
  <h3>   Các dãy số trong mảng là : ${numberArr}</h3>
  <h3> Tổng số dương là : ${tongSoDuong}</h3>
  <h3> Số dương trong mảng là : ${ demSoDuong}</h3>
  <h3> Số nhỏ nhất trong mảng là : ${ soNhoNhat}</h3>
- <h3> Số dương nhỏ nhất trong mảng là : ${min}
+ <h3> Số dương nhỏ nhất trong mảng là : ${min}</h3>
+ <h3> Số chẵn cuối cùng trong dãy là : ${ketQua}</h3>
+<h3> Sắp xếp giá trị tăng dần của mẳng : ${sapXep}</h3>
   `;
 
  document.getElementById("result").innerHTML = content;
