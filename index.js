@@ -65,6 +65,81 @@ function sortAcesding(numberArr) {
 var sapXep = sortAcesding(numberArr);
 
 
+// Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
+function isPrime(n) {
+    if (n<=1){
+        return false ;
+
+    }
+    if (n <= 3){
+        return true ;
+    }
+    if ( n%2 === 0 || n%3 ===0 ){
+        return false;
+
+
+    }
+    var i = 5 ;
+    while ( i*i <= n){
+        if( n % i === 0 || n%(i+2) === 0){
+            return false ;
+
+        }
+        i += 6
+    }
+    return true ;
+
+}
+function findFirstPrime(numberArr) {
+    for (var i = 0; i< numberArr.length; i++ ){
+        if (isPrime(numberArr[i])){
+            return numberArr[i];
+        }
+    }
+    return -1
+
+}
+var firstPrime = findFirstPrime(numberArr);
+//Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
+function countInteger(numberArr) {
+    var count = 0 ;
+    for (var num of numberArr ){
+        if (Number.isInteger(num)){
+            count++ ;
+        }
+    }
+    return count;
+}
+var countOfInteger = countInteger(numberArr);
+//So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.
+function countPositiveAndNegative(numberArr) {
+    var positiveCount = 0;
+    var negativeCount = 0;
+
+    for (let i = 0; i < numberArr.length; i++) {
+        if (numberArr[i] > 0) {
+            positiveCount++;
+        } else if (numberArr[i] < 0) {
+            negativeCount++;
+        }
+    }
+ 
+    if (negativeCount > positiveCount) {
+        console.log("Số âm nhiều hơn số dương.");
+    } else if (negativeCount < positiveCount){
+        console.log("số dương nhiều hơn số âm");
+    }else{
+        console.log("số duong bằng số âm");
+    }
+ }
+ countPositiveAndNegative(numberArr);
+
+
+
+
+
+
+
 
 
 
@@ -78,7 +153,11 @@ var sapXep = sortAcesding(numberArr);
  <h3> Số dương nhỏ nhất trong mảng là : ${min}</h3>
  <h3> Số chẵn cuối cùng trong dãy là : ${ketQua}</h3>
 <h3> Sắp xếp giá trị tăng dần của mẳng : ${sapXep}</h3>
-  `;
+ <h3> Số nguyên tố đầu tiên trong mang là :  ${firstPrime }</h3> 
+ <h3> Số lượng số nguyên trong mảng :  ${countOfInteger}</h3> 
+ 
+ 
+ `;
 
  document.getElementById("result").innerHTML = content;
 
